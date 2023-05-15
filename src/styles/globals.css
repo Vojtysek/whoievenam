@@ -4,6 +4,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 
 .background {
-  background-image: url(../../public/pattern.svg),
+  background-image: url(../assets/pattern.svg),
     linear-gradient(to bottom, rgba(47, 47, 47, 0.15), transparent)
 }
