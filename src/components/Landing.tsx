@@ -1,37 +1,58 @@
-import { Link } from "react-scroll";
+import { useRef } from "react";
 import { Reveal } from "./Reveal";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 const Landing = () => {
+  const targetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: [
+      "end end", "end start"
+    ]
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
+
+
   return (
-    <section
+    <motion.section
+      ref={targetRef}
+      style={{ opacity }}
       id="home"
-      className="container mx-auto flex h-screen flex-row items-center justify-center p-4"
+      className="flex h-screen flex-row items-center justify-center p-4"
     >
-      <div className="w-1/2">
-        <Reveal>
-          <p className="mt-2 text-2xl text-red-400">Full-Stack Student</p>
-        </Reveal>
-        <Reveal>
-          <h1 className="text-[64px] text-white">Vojtěch Döme</h1>
-        </Reveal>
-        <Reveal>
-          <div className="m-4 mt-12 w-max rounded-3xl bg-red-400 px-10 py-3 text-white transition-all duration-300 ease-in-out hover:scale-110">
-            <Link
-              to="about"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={300}
-              delay={50}
-            >
-              Who I Even Am?
-            </Link>
-          </div>
-        </Reveal>
+      <video
+        className="absolute left-0 top-0 h-full w-screen object-cover opacity-50"
+        autoPlay
+        muted
+        loop
+      >
+        <source src="hero.mp4" type="video/mp4" />
+      </video>
+      <div>
+        <motion.div
+        style={{ scale }}
+        className="w-1/2">
+          <Reveal>
+            <p className="mt-2 text-2xl text-red-400">Full-Stack Student</p>
+          </Reveal>
+          <Reveal>
+            <h1 className="text-[64px] text-white">Vojtěch Döme</h1>
+          </Reveal>
+          <Reveal>
+            <p className="mt-2 text-2xl text-white">
+              {/* custom quote */}
+              &quot;once a new technology rolls over you, if you&apos;re not
+              part of the steamroller, you&apos;re part of the road&quot;
+            </p>
+          </Reveal>
+          <Reveal>
+            <p className="mt-2 text-2xl text-white">- Stewart Brand</p>
+          </Reveal>
+        </motion.div>
       </div>
-      <div className="w-1/3 h-1/2 grid place-items-center">
-      </div>
-    </section>
+    </motion.section>
   );
 };
 

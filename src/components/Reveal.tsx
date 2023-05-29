@@ -28,13 +28,12 @@ export const Reveal = ({ children }: Props) => {
     >
       <motion.div
         variants={{
-          //if rotation is set, rotate the element
           hidden: { opacity: 0, y: 75 },
           visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"
         animate={mainController}
-        transition={{ duration: 0.25 }}
+        transition={{ duration: 0.3, delay: 0.1 }}
       >
         {children}
       </motion.div>

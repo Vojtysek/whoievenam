@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Landing from "../components/Landing";
 import About from "../components/About";
-import Projects from "../components/Projects";
+import Projects from "../components/Projects/Projects";
 
 const Home: NextPage = () => {
   return (
@@ -13,11 +13,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+    <div className="container">
       <Landing />
       <About />
       <Projects />
+    </div>
     </>
   );
 };
-
+ 
 export default Home;

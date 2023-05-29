@@ -4,11 +4,11 @@ const About = () => {
   return (
     <section
       id="about"
-      className="container mx-auto flex h-screen flex-row items-center justify-center p-4 text-white"
+      className="flex h-screen flex-row items-center justify-center p-4 text-white"
     >
-      <div className="flex flex-col items-center justify-center text-justify w-2/3">
+      <div className="flex w-2/3 flex-col items-center justify-center text-justify">
         <Reveal>
-          <h1 className="text-[64px] text-red-400">About Me</h1>
+          <h1 className="text-[64px] text-red-400">about Me</h1>
         </Reveal>
         <Reveal>
           <p className="mt-2 text-xl text-white">

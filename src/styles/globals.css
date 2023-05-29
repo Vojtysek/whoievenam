@@ -6,10 +6,3 @@
 * {
   font-family: 'Red Hat Mono', monospace;
 }
-
-.background {
-  background: radial-gradient(circle, #e5e5e5, transparent 11%);
-  background-size: 1em 1em;
-  background-color: #121212;
-  opacity: 1;
-}
