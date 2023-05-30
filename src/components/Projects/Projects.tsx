@@ -10,9 +10,9 @@ const Projects = () => {
       <Reveal>
         <h1 className="text-[64px] text-red-400">projects</h1>
       </Reveal>
-      <Reveal>
+      {/* <Reveal>
         <Grid />
-      </Reveal>
+      </Reveal> */}
     </section>
   );
 };
